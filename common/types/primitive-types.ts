@@ -11,4 +11,6 @@ export type PrimitiveTypes =
     'textarea' |
     'enum' |
     'link' |
+    'JSON' |
+    'HTML' |
     'URL';
