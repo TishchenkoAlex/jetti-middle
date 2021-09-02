@@ -137,7 +137,7 @@ class SQLGenegator {
             if (type === 'number') {
                 return `,  CAST(JSON_VALUE(d.doc, N'$."${prop}"') AS MONEY) "${prop}"\n`;
             }
-            if (type === 'javascript')
+            if (type === 'javascript' || type === 'HTML')
                 return `, (SELECT "${prop}" FROM OPENJSON(d.doc) WITH ("${prop}" NVARCHAR(MAX) '$."${prop}"')) "${prop}"\n`;
             return `, JSON_VALUE(d.doc, N'$."${prop}"') "${prop}"\n`;
         };
