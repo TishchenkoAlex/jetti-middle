@@ -106,6 +106,7 @@ export interface PropOptions {
     isIndexed?: boolean;
     isProtected?: boolean;
     isUnique?: boolean;
+    isNotCopy?: boolean;
     panel?: string;
     fieldset?: string;
     validators?: {
