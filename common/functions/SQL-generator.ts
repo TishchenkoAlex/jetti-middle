@@ -10,6 +10,8 @@ import { PrimitiveTypes } from '../types/primitive-types';
 
 export class SQLGenegator {
 
+  static storedInTablesTypes = {};
+
   static QueryObject(doc: { [x: string]: PropOptions }, type: string) {
 
     const simleProperty = (prop: string, type: PrimitiveTypes) => {
@@ -317,11 +319,11 @@ export class SQLGenegator {
     return query;
   }
 
-  static noExpaner(storedIn?: 'table' | 'view') {
-    return storedIn === 'table' ? '' : 'WITH (NOEXPAND)'
-  }
 
-  static QueryList(doc: { [x: string]: any }, type: string, storedIn?: 'table' | 'view') {
+
+  static QueryList(doc: { [x: string]: any }, type: string, storedInTablesTypes: { [x: string]: any } = {}) {
+
+    const noExpaner = (t: string) => storedInTablesTypes[t] ? '' : 'WITH (NOEXPAND)'
 
     const simleProperty = (prop: string, type: string) => {
       return `
@@ -334,7 +336,7 @@ export class SQLGenegator {
     const addLeftJoin = (prop: string, type: string) =>
       type.startsWith('Types.') ? `
         LEFT JOIN dbo.[Documents] [${prop}.v] ON [${prop}.v].id = d.[${prop}]` : `
-        LEFT JOIN dbo.[${type}.v] [${prop}.v] ${this.noExpaner(storedIn)} ON [${prop}.v].id = d.[${prop}]`;
+        LEFT JOIN dbo.[${type}.v] [${prop}.v] ${noExpaner(type)} ON [${prop}.v].id = d.[${prop}]`;
 
     let query = `
       SELECT
@@ -357,10 +359,10 @@ export class SQLGenegator {
     }
 
     query += `
-      FROM [${type}.v] d ${this.noExpaner(storedIn)}
+      FROM [${type}.v] d ${noExpaner(type)}
         LEFT JOIN dbo.[Documents] [parent] ON [parent].id = d.[parent]
-        LEFT JOIN dbo.[Catalog.User.v] [user] WITH (NOEXPAND) ON [user].id = d.[user]
-        LEFT JOIN dbo.[Catalog.Company.v] [company] WITH (NOEXPAND) ON [company].id = d.company${LeftJoin}
+        LEFT JOIN dbo.[Catalog.User.v] [user] ${noExpaner('Catalog.User')} ON [user].id = d.[user]
+        LEFT JOIN dbo.[Catalog.Company.v] [company] ${noExpaner('Catalog.Company')} ON [company].id = d.company${LeftJoin}
     `;
 
     return query;

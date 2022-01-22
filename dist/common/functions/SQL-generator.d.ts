@@ -1,5 +1,6 @@
 import { PropOptions } from '../interfaces/document';
 export declare class SQLGenegator {
+    static storedInTablesTypes: {};
     static QueryObject(doc: {
         [x: string]: PropOptions;
     }, type: string): string;
@@ -9,10 +10,11 @@ export declare class SQLGenegator {
     static QueryListHierarchy(doc: {
         [x: string]: any;
     }, type: string): string;
-    static noExpaner(storedIn?: 'table' | 'view'): "" | "WITH (NOEXPAND)";
     static QueryList(doc: {
         [x: string]: any;
-    }, type: string, storedIn?: 'table' | 'view'): string;
+    }, type: string, storedInTablesTypes?: {
+        [x: string]: any;
+    }): string;
     static QueryListRaw(doc: {
         [x: string]: any;
     }, type: string): string;
