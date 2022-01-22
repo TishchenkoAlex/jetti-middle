@@ -74,6 +74,7 @@ export interface DocumentOptions {
     copyTo?: CopyTo[];
     relations?: Relation[];
     module?: string;
+    storedIn?: 'table' | 'view'
 }
 
 export interface PropOptions {
