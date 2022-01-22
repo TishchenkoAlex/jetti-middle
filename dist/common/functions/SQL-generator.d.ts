@@ -9,9 +9,10 @@ export declare class SQLGenegator {
     static QueryListHierarchy(doc: {
         [x: string]: any;
     }, type: string): string;
+    static noExpaner(storedIn?: 'table' | 'view'): "" | "WITH (NOEXPAND)";
     static QueryList(doc: {
         [x: string]: any;
-    }, type: string): string;
+    }, type: string, storedIn?: 'table' | 'view'): string;
     static QueryListRaw(doc: {
         [x: string]: any;
     }, type: string): string;
