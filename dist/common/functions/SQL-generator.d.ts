@@ -12,9 +12,7 @@ export declare class SQLGenegator {
     }, type: string): string;
     static QueryList(doc: {
         [x: string]: any;
-    }, type: string, storedInTablesTypes?: {
-        [x: string]: any;
-    }): string;
+    }, type: string): string;
     static QueryListRaw(doc: {
         [x: string]: any;
     }, type: string): string;

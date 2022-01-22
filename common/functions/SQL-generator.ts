@@ -321,9 +321,9 @@ export class SQLGenegator {
 
 
 
-  static QueryList(doc: { [x: string]: any }, type: string, storedInTablesTypes: { [x: string]: any } = {}) {
+  static QueryList(doc: { [x: string]: any }, type: string) {
 
-    const noExpaner = (t: string) => storedInTablesTypes[t] ? '' : 'WITH (NOEXPAND)'
+    const noExpaner = (t: string) => this.storedInTablesTypes[t] ? '' : 'WITH (NOEXPAND)'
 
     const simleProperty = (prop: string, type: string) => {
       return `

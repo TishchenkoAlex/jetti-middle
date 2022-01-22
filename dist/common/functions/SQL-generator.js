@@ -305,8 +305,8 @@ class SQLGenegator {
       WHERE d.[type] = '${type}' `;
         return query;
     }
-    static QueryList(doc, type, storedInTablesTypes = {}) {
-        const noExpaner = (t) => storedInTablesTypes[t] ? '' : 'WITH (NOEXPAND)';
+    static QueryList(doc, type) {
+        const noExpaner = (t) => this.storedInTablesTypes[t] ? '' : 'WITH (NOEXPAND)';
         const simleProperty = (prop, type) => {
             return `
         , d.[${prop}] [${prop}]`;
