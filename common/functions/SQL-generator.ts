@@ -323,7 +323,7 @@ export class SQLGenegator {
 
   static QueryList(doc: { [x: string]: any }, type: string) {
 
-    const noExpaner = (t: string) => this.storedInTablesTypes[t] ? '' : 'WITH (NOEXPAND)'
+    const noExpander = (t: string) => this.storedInTablesTypes[t] ? '' : 'WITH (NOEXPAND)'
 
     const simleProperty = (prop: string, type: string) => {
       return `
@@ -336,7 +336,7 @@ export class SQLGenegator {
     const addLeftJoin = (prop: string, type: string) =>
       type.startsWith('Types.') ? `
         LEFT JOIN dbo.[Documents] [${prop}.v] ON [${prop}.v].id = d.[${prop}]` : `
-        LEFT JOIN dbo.[${type}.v] [${prop}.v] ${noExpaner(type)} ON [${prop}.v].id = d.[${prop}]`;
+        LEFT JOIN dbo.[${type}.v] [${prop}.v] ${noExpander(type)} ON [${prop}.v].id = d.[${prop}]`;
 
     let query = `
       SELECT
@@ -359,10 +359,10 @@ export class SQLGenegator {
     }
 
     query += `
-      FROM [${type}.v] d ${noExpaner(type)}
+      FROM [${type}.v] d ${noExpander(type)}
         LEFT JOIN dbo.[Documents] [parent] ON [parent].id = d.[parent]
-        LEFT JOIN dbo.[Catalog.User.v] [user] ${noExpaner('Catalog.User')} ON [user].id = d.[user]
-        LEFT JOIN dbo.[Catalog.Company.v] [company] ${noExpaner('Catalog.Company')} ON [company].id = d.company${LeftJoin}
+        LEFT JOIN dbo.[Catalog.User.v] [user] ${noExpander('Catalog.User')} ON [user].id = d.[user]
+        LEFT JOIN dbo.[Catalog.Company.v] [company] ${noExpander('Catalog.Company')} ON [company].id = d.company${LeftJoin}
     `;
 
     return query;
