@@ -32,7 +32,7 @@ function JDocument(props) {
 exports.JDocument = JDocument;
 class DocumentBase {
     constructor() {
-        this.id = uuid_1.v1().toLocaleUpperCase();
+        this.id = (0, uuid_1.v1)().toLocaleUpperCase();
         this.date = new Date();
         this.code = '';
         this.description = '';

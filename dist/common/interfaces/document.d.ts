@@ -114,6 +114,7 @@ export interface PropOptions {
         key: string;
         value?: any;
     }[];
+    balanceCalculationFormula?: string;
 }
 export interface IFlatDocument {
     id: Ref;

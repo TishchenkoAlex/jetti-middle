@@ -58,19 +58,19 @@ class RegisterInfo {
     QueryList() { return SQL_generator_1.SQLGenegator.QueryRegisterInfoList(this.Props(), this.type); }
 }
 __decorate([
-    document_1.Props({ type: 'string', hidden: true, hiddenInList: true, required: true }),
+    (0, document_1.Props)({ type: 'string', hidden: true, hiddenInList: true, required: true }),
     __metadata("design:type", Object)
 ], RegisterInfo.prototype, "type", void 0);
 __decorate([
-    document_1.Props({ type: 'datetime', required: true }),
+    (0, document_1.Props)({ type: 'datetime', required: true }),
     __metadata("design:type", Date)
 ], RegisterInfo.prototype, "date", void 0);
 __decorate([
-    document_1.Props({ type: 'Catalog.Company', required: true }),
+    (0, document_1.Props)({ type: 'Catalog.Company', required: true }),
     __metadata("design:type", Object)
 ], RegisterInfo.prototype, "company", void 0);
 __decorate([
-    document_1.Props({ type: 'Types.Document', hiddenInList: true, required: true }),
+    (0, document_1.Props)({ type: 'Types.Document', hiddenInList: true, required: true }),
     __metadata("design:type", Object)
 ], RegisterInfo.prototype, "document", void 0);
 exports.RegisterInfo = RegisterInfo;

@@ -7,6 +7,7 @@ import { PropOptions } from '../interfaces/document';
 export interface RegisterInfoOptions {
   type: string;
   description: string;
+  pruningMethod?: 'sliceLast' | 'sliceFirst';
 }
 
 export function JRegisterInfo(props: RegisterInfoOptions) {

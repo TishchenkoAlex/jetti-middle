@@ -35,33 +35,33 @@ class DynamicProps {
     }
 }
 __decorate([
-    document_1.Props({ type: 'enum', value: ['add', 'mod', 'del'] }),
+    (0, document_1.Props)({ type: 'enum', value: ['add', 'mod', 'del'] }),
     __metadata("design:type", Object)
 ], DynamicProps.prototype, "Kind", void 0);
 __decorate([
-    document_1.Props({ type: 'string' }),
+    (0, document_1.Props)({ type: 'string' }),
     __metadata("design:type", Object)
 ], DynamicProps.prototype, "Table", void 0);
 __decorate([
-    document_1.Props({ type: 'string' }),
+    (0, document_1.Props)({ type: 'string' }),
     __metadata("design:type", Object)
 ], DynamicProps.prototype, "Filed", void 0);
 __decorate([
-    document_1.Props({ type: 'string' }),
+    (0, document_1.Props)({ type: 'string' }),
     __metadata("design:type", Object)
 ], DynamicProps.prototype, "Options", void 0);
 __decorate([
-    document_1.Props({ type: 'string' }),
+    (0, document_1.Props)({ type: 'string' }),
     __metadata("design:type", Object)
 ], DynamicProps.prototype, "OptionsValue", void 0);
 __decorate([
-    document_1.Props({ type: 'string' }),
+    (0, document_1.Props)({ type: 'string' }),
     __metadata("design:type", Object)
 ], DynamicProps.prototype, "SetId", void 0);
 exports.DynamicProps = DynamicProps;
 class FormBase {
     constructor(user) {
-        this.id = uuid_1.v1().toLocaleUpperCase();
+        this.id = (0, uuid_1.v1)().toLocaleUpperCase();
         this.date = new Date();
         this.code = '';
         this.description = '';
@@ -248,59 +248,59 @@ class FormBase {
     }
 }
 __decorate([
-    document_1.Props({ type: 'string', hidden: true, hiddenInList: true }),
+    (0, document_1.Props)({ type: 'string', hidden: true, hiddenInList: true }),
     __metadata("design:type", Object)
 ], FormBase.prototype, "user", void 0);
 __decorate([
-    document_1.Props({ type: 'string', hidden: true, hiddenInList: true }),
+    (0, document_1.Props)({ type: 'string', hidden: true, hiddenInList: true }),
     __metadata("design:type", Object)
 ], FormBase.prototype, "id", void 0);
 __decorate([
-    document_1.Props({ type: 'string', hidden: true, hiddenInList: true }),
+    (0, document_1.Props)({ type: 'string', hidden: true, hiddenInList: true }),
     __metadata("design:type", String)
 ], FormBase.prototype, "type", void 0);
 __decorate([
-    document_1.Props({ type: 'datetime', order: 1, hidden: true }),
+    (0, document_1.Props)({ type: 'datetime', order: 1, hidden: true }),
     __metadata("design:type", Object)
 ], FormBase.prototype, "date", void 0);
 __decorate([
-    document_1.Props({ type: 'string', hidden: true, order: 2, style: { width: '135px' } }),
+    (0, document_1.Props)({ type: 'string', hidden: true, order: 2, style: { width: '135px' } }),
     __metadata("design:type", Object)
 ], FormBase.prototype, "code", void 0);
 __decorate([
-    document_1.Props({ type: 'string', order: 3, hidden: true, style: { width: '300px' } }),
+    (0, document_1.Props)({ type: 'string', order: 3, hidden: true, style: { width: '300px' } }),
     __metadata("design:type", Object)
 ], FormBase.prototype, "description", void 0);
 __decorate([
-    document_1.Props({ type: 'Catalog.Company', order: 4, hidden: true }),
+    (0, document_1.Props)({ type: 'Catalog.Company', order: 4, hidden: true }),
     __metadata("design:type", Object)
 ], FormBase.prototype, "company", void 0);
 __decorate([
-    document_1.Props({ type: 'boolean', hidden: true, hiddenInList: true }),
+    (0, document_1.Props)({ type: 'boolean', hidden: true, hiddenInList: true }),
     __metadata("design:type", Object)
 ], FormBase.prototype, "posted", void 0);
 __decorate([
-    document_1.Props({ type: 'boolean', hidden: true, hiddenInList: true }),
+    (0, document_1.Props)({ type: 'boolean', hidden: true, hiddenInList: true }),
     __metadata("design:type", Object)
 ], FormBase.prototype, "deleted", void 0);
 __decorate([
-    document_1.Props({ type: 'Types.Subcount', hidden: true, hiddenInList: true, order: -1 }),
+    (0, document_1.Props)({ type: 'Types.Subcount', hidden: true, hiddenInList: true, order: -1 }),
     __metadata("design:type", Object)
 ], FormBase.prototype, "parent", void 0);
 __decorate([
-    document_1.Props({ type: 'boolean', hidden: true, hiddenInList: true }),
+    (0, document_1.Props)({ type: 'boolean', hidden: true, hiddenInList: true }),
     __metadata("design:type", Object)
 ], FormBase.prototype, "isfolder", void 0);
 __decorate([
-    document_1.Props({ type: 'string', hidden: true, hiddenInList: true, order: -1, controlType: 'textarea' }),
+    (0, document_1.Props)({ type: 'string', hidden: true, hiddenInList: true, order: -1, controlType: 'textarea' }),
     __metadata("design:type", Object)
 ], FormBase.prototype, "info", void 0);
 __decorate([
-    document_1.Props({ type: 'datetime', hiddenInList: true, order: -1, hidden: true }),
+    (0, document_1.Props)({ type: 'datetime', hiddenInList: true, order: -1, hidden: true }),
     __metadata("design:type", Object)
 ], FormBase.prototype, "timestamp", void 0);
 __decorate([
-    document_1.Props({
+    (0, document_1.Props)({
         type: 'table', required: false, label: 'Dynamic props', order: 77
     }),
     __metadata("design:type", Array)

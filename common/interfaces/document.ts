@@ -107,6 +107,7 @@ export interface PropOptions {
     panel?: string;
     fieldset?: string;
     validators?: { key: string, value?: any }[];
+    balanceCalculationFormula?: string;
 }
 
 export interface IFlatDocument {
