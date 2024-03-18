@@ -27,7 +27,7 @@ function JRegisterAccumulation(props) {
 exports.JRegisterAccumulation = JRegisterAccumulation;
 class RegisterAccumulation {
     constructor(init) {
-        this.id = uuid_1.v1().toLocaleUpperCase();
+        this.id = (0, uuid_1.v1)().toLocaleUpperCase();
         this.parent = null;
         this.kind = true;
         this.calculated = false;
@@ -65,39 +65,39 @@ class RegisterAccumulation {
     QueryList() { return SQL_generator_1.SQLGenegator.QueryRegisterAccumulatioList(this.Props(), this.type); }
 }
 __decorate([
-    document_1.Props({ type: 'string', required: true, hidden: true, hiddenInList: true, value: 'newid()' }),
+    (0, document_1.Props)({ type: 'string', required: true, hidden: true, hiddenInList: true, value: 'newid()' }),
     __metadata("design:type", Object)
 ], RegisterAccumulation.prototype, "id", void 0);
 __decorate([
-    document_1.Props({ type: 'string', required: false, hidden: true, hiddenInList: true }),
+    (0, document_1.Props)({ type: 'string', required: false, hidden: true, hiddenInList: true }),
     __metadata("design:type", Object)
 ], RegisterAccumulation.prototype, "parent", void 0);
 __decorate([
-    document_1.Props({ type: 'boolean', required: true, value: '0' }),
+    (0, document_1.Props)({ type: 'boolean', required: true, value: '0' }),
     __metadata("design:type", Object)
 ], RegisterAccumulation.prototype, "kind", void 0);
 __decorate([
-    document_1.Props({ type: 'boolean', required: true, value: '0' }),
+    (0, document_1.Props)({ type: 'boolean', required: true, value: '0' }),
     __metadata("design:type", Object)
 ], RegisterAccumulation.prototype, "calculated", void 0);
 __decorate([
-    document_1.Props({ type: 'number', required: true, hidden: true, hiddenInList: true, value: '1' }),
+    (0, document_1.Props)({ type: 'number', required: true, hidden: true, hiddenInList: true, value: '1' }),
     __metadata("design:type", Object)
 ], RegisterAccumulation.prototype, "exchangeRate", void 0);
 __decorate([
-    document_1.Props({ type: 'string', hidden: true, hiddenInList: true, required: true }),
+    (0, document_1.Props)({ type: 'string', hidden: true, hiddenInList: true, required: true }),
     __metadata("design:type", Object)
 ], RegisterAccumulation.prototype, "type", void 0);
 __decorate([
-    document_1.Props({ type: 'datetime', required: true, dimension: true }),
+    (0, document_1.Props)({ type: 'datetime', required: true, dimension: true }),
     __metadata("design:type", Object)
 ], RegisterAccumulation.prototype, "date", void 0);
 __decorate([
-    document_1.Props({ type: 'Types.Document', hidden: true, hiddenInList: true, required: true }),
+    (0, document_1.Props)({ type: 'Types.Document', hidden: true, hiddenInList: true, required: true }),
     __metadata("design:type", Object)
 ], RegisterAccumulation.prototype, "document", void 0);
 __decorate([
-    document_1.Props({ type: 'Catalog.Company', required: true, dimension: true }),
+    (0, document_1.Props)({ type: 'Catalog.Company', required: true, dimension: true }),
     __metadata("design:type", Object)
 ], RegisterAccumulation.prototype, "company", void 0);
 exports.RegisterAccumulation = RegisterAccumulation;

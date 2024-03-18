@@ -7,6 +7,7 @@ import { PropOptions } from '../interfaces/document';
 export interface RegisterAccumulationOptions {
   type: string;
   description: string;
+  pruningMethod?: 'balance';
 }
 
 export function JRegisterAccumulation(props: RegisterAccumulationOptions) {

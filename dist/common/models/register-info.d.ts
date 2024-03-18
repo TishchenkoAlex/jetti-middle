@@ -3,6 +3,7 @@ import { PropOptions } from '../interfaces/document';
 export interface RegisterInfoOptions {
     type: string;
     description: string;
+    pruningMethod?: 'sliceLast' | 'sliceFirst';
 }
 export declare function JRegisterInfo(props: RegisterInfoOptions): <T extends new (...args: any[]) => {}>(constructor: T) => {
     new (...args: any[]): {
