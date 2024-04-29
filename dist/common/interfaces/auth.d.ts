@@ -7,6 +7,7 @@ export interface IJWTPayload {
     env: {
         [x: string]: any;
     };
+    timezoneOffset?: number;
 }
 export interface IAccount extends IJWTPayload {
     created: string;

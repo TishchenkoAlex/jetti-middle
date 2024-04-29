@@ -1,7 +1,7 @@
 {
   "name": "@TishchenkoAlex/jetti-middle",
   "tsc": "tsc",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Jetti Finance server and client common files",
   "main": "./dist/index",
   "typings": "./dist/index.d.ts",

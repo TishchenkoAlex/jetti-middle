@@ -6,6 +6,7 @@ export interface IJWTPayload {
     isAdmin: boolean;
     roles: any[];
     env: { [x: string]: any };
+    timezoneOffset?: number; // смещение часового пояса пользователя относительно UTC (в минутах)
 }
 
 export interface IAccount extends IJWTPayload {
