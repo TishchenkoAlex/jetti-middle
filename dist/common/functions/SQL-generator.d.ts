@@ -13,8 +13,8 @@ export declare class SQLGenegator {
     static QueryList(doc: {
         [x: string]: any;
     }, type: string): string;
-    static QueryListRaw(doc: {
-        [x: string]: any;
+    static QueryListRaw(allProps: {
+        [x: string]: PropOptions;
     }, type: string): string;
     static QueryRegisterAccumulatioList(doc: {
         [x: string]: any;

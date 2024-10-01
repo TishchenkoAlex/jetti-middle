@@ -115,6 +115,7 @@ export interface PropOptions {
         value?: any;
     }[];
     balanceCalculationFormula?: string;
+    maxLength?: number;
 }
 export interface IFlatDocument {
     id: Ref;
