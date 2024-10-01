@@ -108,6 +108,7 @@ export interface PropOptions {
     fieldset?: string;
     validators?: { key: string, value?: any }[];
     balanceCalculationFormula?: string;
+    maxLength?: number;
 }
 
 export interface IFlatDocument {

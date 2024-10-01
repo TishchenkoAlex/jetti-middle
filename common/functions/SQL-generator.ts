@@ -368,9 +368,9 @@ export class SQLGenegator {
     return query;
   }
 
-  static QueryListRaw(doc: { [x: string]: any }, type: string) {
+  static QueryListRaw(allProps: { [x: string]: PropOptions }, type: string) {
 
-    const simleProperty = (prop: string, type: string) => {
+    const simleProperty = (prop: string, type: string, maxLength: number | undefined) => {
       if (type === 'boolean') return `
       , ISNULL(TRY_CONVERT(BIT, JSON_VALUE(doc,N'$."${prop}"')), 0) [${prop}]`;
       if (type === 'number') return `
@@ -382,7 +382,7 @@ export class SQLGenegator {
       if (type === 'enum') return `
       , ISNULL(TRY_CONVERT(NVARCHAR(150), JSON_VALUE(doc,N'$."${prop}"')), '') [${prop}]`;
       if (type === 'string') return `
-      , ISNULL(TRY_CONVERT(NVARCHAR(150), JSON_VALUE(doc, N'$."${prop}"')), '') [${prop}]`;
+      , ISNULL(TRY_CONVERT(NVARCHAR(${maxLength ?? 150}), JSON_VALUE(doc, N'$."${prop}"')), '') [${prop}]`;
       if (type.includes('.')) return `
       , TRY_CONVERT(UNIQUEIDENTIFIER, JSON_VALUE(doc, N'$."${prop}"')) [${prop}]`;
       return `
@@ -391,11 +391,11 @@ export class SQLGenegator {
 
     let query = ``;
     const excludedProps = Type.isOperation(type) ? ['f1', 'f2', 'f3'] : [];
-    const props = Object.keys(excludeProps(doc)).filter(prop => !excludedProps.includes(prop));
+    const props = Object.keys(excludeProps(allProps)).filter(prop => !excludedProps.includes(prop));
     for (const prop of props) {
-      const type = doc[prop].type || 'string';
+      const type = allProps[prop].type || 'string';
       if (type !== 'table') {
-        query += simleProperty(prop, type);
+        query += simleProperty(prop, type, allProps[prop].maxLength);
       }
     }
 
